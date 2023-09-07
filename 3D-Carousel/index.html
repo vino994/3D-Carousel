@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-ImageGallery-Carousel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <span style="--i:1">
+            <img src="1.jpg" alt="">
+            </span>
+            <span style="--i:2">
+            <img src="2.jpg" alt="">
+            </span>
+            <span style="--i:3">
+            <img src="3.jpg" alt="">
+            </span>
+            <span style="--i:4">
+            <img src="4.jpg" alt="">
+            </span>
+            <span style="--i:5">
+            <img src="5.jpg" alt="">
+            </span>
+            <span style="--i:6">
+            <img src="6.jpg" alt="">
+            </span>
+            <span style="--i:7">
+            <img src="7.jpg" alt="">
+            </span>
+            <span style="--i:8">
+            <img src="3.jpg" alt="">
+            </span>
+        </div>
+        <div class="btns">
+            <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+    <script>
+        var prev = document.getElementById('prev');
+        var next = document.getElementById('next')
+        var box = document.querySelector('.box');
+        var degree = 0;
+        prev.addEventListener('click',()=>{
+           
+            degree -= 45;
+            console.log(degree)
+            box.style.transform ='perspective(1000px) rotateY('+degree+'deg)';
+        })
+        next.addEventListener('click',()=>{
+           
+           degree += 45;
+           console.log(degree)
+           box.style.transform ='perspective(1000px) rotateY('+degree+'deg)';
+       })
+    </script>
+</body>
+</html>
